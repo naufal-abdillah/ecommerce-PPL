@@ -19,7 +19,12 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">Shopping Cart</a></li>
+                    <!--Shopping cart-->
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
+                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
+                        <?php echo $keranjang?>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
                 </ul>
             </div>

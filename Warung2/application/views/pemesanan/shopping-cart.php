@@ -19,7 +19,12 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="<?php echo base_url('Cart');?>">Shopping Cart</a></li>
+                    <!--Shopping cart-->
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
+                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
+                        <?php echo $keranjang?>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
                 </ul>
             </div>
@@ -30,69 +35,49 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Shopping Cart</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    
                 </div>
                 <div class="content">
                     <div class="row no-gutters">
                         <div class="col-md-12 col-lg-8">
                             <div class="items">
+                                <?php 
+                                foreach ($this->cart->contents() as $items):
+                                    $id = $items['id'];
+                                    $produk=$this->model_barang->find($id);
+                                ?>
                                 <div class="product">
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col-md-3">
-                                            <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tech/image2.jpg"></div>
+                                            <div class="product-image"><img class="img-fluid d-block mx-auto image" src="<?php echo base_url().'/assets/img/'.$produk->gambar?>"></div>
                                         </div>
-                                        <div class="col-md-5 product-info"><a class="product-name" href="#">Lorem Ipsum dolor</a>
+                                        <div class="col-md-5 product-info">
+                                        <?php echo $items['name']?>
                                             <div class="product-specs">
-                                                <div><span>Display:&nbsp;</span><span class="value">5 inch</span></div>
-                                                <div><span>RAM:&nbsp;</span><span class="value">4GB</span></div>
-                                                <div><span>Memory:&nbsp;</span><span class="value">32GB</span></div>
+                                                <div><span>Price:&nbsp;</span><span class="value"><?php echo $items['price']?></span></div>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Quantity</label><input type="number" id="number" class="form-control quantity-input" value="1"></div>
-                                        <div class="col-6 col-md-2 price"><span>$120</span></div>
+                                        <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Quantity</label><input type="number" name='qty' id="number" class="form-control quantity-input" value="<?php echo $items['qty']?>"></div>
+                                        <div class="col-6 col-md-2 "><label class="d-none d-md-block" for="quantity">Subtotal</label>
+                                        <span>
+                                        <b> <?php echo $items['subtotal']?> </b>
+                                        </span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-md-3">
-                                            <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tech/image2.jpg"></div>
-                                        </div>
-                                        <div class="col-md-5 product-info"><a class="product-name" href="#">Lorem Ipsum dolor</a>
-                                            <div class="product-specs">
-                                                <div><span>Display:&nbsp;</span><span class="value">5 inch</span></div>
-                                                <div><span>RAM:&nbsp;</span><span class="value">4GB</span></div>
-                                                <div><span>Memory:&nbsp;</span><span class="value">32GB</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Quantity</label><input type="number" id="number" class="form-control quantity-input" value="1"></div>
-                                        <div class="col-6 col-md-2 price"><span>$120</span></div>
-                                    </div>
-                                </div>
-                                <div class="product">
-                                    <div class="row justify-content-center align-items-center">
-                                        <div class="col-md-3">
-                                            <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tech/image2.jpg"></div>
-                                        </div>
-                                        <div class="col-md-5 product-info"><a class="product-name" href="#">Lorem Ipsum dolor</a>
-                                            <div class="product-specs">
-                                                <div><span>Display:&nbsp;</span><span class="value">5 inch</span></div>
-                                                <div><span>RAM:&nbsp;</span><span class="value">4GB</span></div>
-                                                <div><span>Memory:&nbsp;</span><span class="value">32GB</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Quantity</label><input type="number" id="number" class="form-control quantity-input" value="1"></div>
-                                        <div class="col-6 col-md-2 price"><span>$120</span></div>
-                                    </div>
-                                </div>
+                                <?php endforeach;?>
+                                <a href="<?= base_url() ?>">
+                                    <div class="btn btn-bg btn-primary">Shopping</div>
+                                </a>
+                                <a href="<?= base_url('cart/delete_cart') ?>">
+                                    <div class="btn btn-bg btn-danger">Delete Cart</div>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-4">
                             <div class="summary">
                                 <h3>Summary</h3>
-                                <h4><span class="text">Subtotal</span><span class="price">$360</span></h4>
-                                <h4><span class="text">Discount</span><span class="price">$0</span></h4>
-                                <h4><span class="text">Shipping</span><span class="price">$0</span></h4>
-                                <h4><span class="text">Total</span><span class="price">$360</span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></div>
+                                <h4><span class="text">Total</span><span class="price"><?= $this->cart->total() ?></span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></div>
                         </div>
                     </div>
                 </div>

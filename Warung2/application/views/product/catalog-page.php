@@ -24,7 +24,12 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="<?php echo base_url();?>">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">Shopping Cart</a></li>
+                    <!--Shopping cart-->
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
+                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
+                        <?php echo $keranjang?>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
                 </ul>
             </div>
@@ -90,10 +95,12 @@
                                                             <div class="price">
                                                                 <h3><?php echo $brg->harga?></h3>
                                                             </div>
+                                                            <!--Shopping cart-->
+                                                                <?php echo anchor('cart/add_cart/'.$brg->id_barang,'<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <?php endforeach; ?>
+                                                <?php endforeach;?>
                                         </div>
                                     </div>                                    
                                 </div>

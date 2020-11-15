@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Payment - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/simple-line-icons.min.css');?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/smoothproducts.css');?>">
 </head>
 
 <body>
@@ -18,8 +18,13 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="catalog-page.html">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shopping-cart.html">Shopping Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Catalog</a></li>
+                    <!--Shopping cart-->
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
+                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
+                        <?php echo $keranjang?>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                 </ul>
             </div>
@@ -112,11 +117,11 @@
             <p>© 2020 Copyright Text</p>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js');?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="<?php echo base_url('assets/js/smoothproducts.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/theme.js');?>"></script>
 </body>
 
 </html>
