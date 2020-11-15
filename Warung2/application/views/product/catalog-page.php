@@ -20,17 +20,16 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="<?php echo base_url();?>">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="<?php echo base_url(); ?>">Catalog</a></li>
                     <!--Shopping cart-->
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
-                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
-                        <?php echo $keranjang?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart'); ?>">
+                            <?php $keranjang = 'Shopping Cart: ' . $this->cart->total_items() . ' items' ?>
+                            <?php echo $keranjang ?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -50,12 +49,11 @@
                                         <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">PC</label></div>
                                         <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Tablets</label></div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="filters" href="#filters" role="button">Filters<i class="icon-arrow-down filter-caret"></i></a>
-                                <div class="collapse"
-                                    id="filters">
+                                <div class="collapse" id="filters">
                                     <div class="filters">
                                         <div class="filter-item">
                                             <h3>Categories</h3>
@@ -88,21 +86,21 @@
                                             <?php foreach ($barang as $brg) : ?>
                                                 <div class="col-12 col-md-6 col-lg-4">
                                                     <div class="clean-product-item">
-                                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" width=100% src="<?php echo base_url().'/assets/img/'.$brg->gambar?>"> </a></div>
-                                                        <div class="product-name"><a href="#"><?php echo $brg->nama_barang?></a></div>
+                                                        <div class="image"><a href="<?php echo base_url('Product/details/' . $brg->id_barang); ?>"><img class="img-fluid d-block mx-auto" width=100% src="<?php echo base_url() . '/assets/img/' . $brg->gambar ?>"> </a></div>
+                                                        <div class="product-name"><a href="<?php echo base_url('Product/details/' . $brg->id_barang); ?>"><?php echo $brg->nama_barang ?></a></div>
                                                         <div class="about">
-                                                        <!-- <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div> -->
+                                                            <!-- <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div> -->
                                                             <div class="price">
-                                                                <h3><?php echo $brg->harga?></h3>
+                                                                <h3><?php echo $brg->harga ?></h3>
                                                             </div>
                                                             <!--Shopping cart-->
-                                                                <?php echo anchor('cart/add_cart/'.$brg->id_barang,'<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
+                                                            <?php echo anchor('cart/add_cart/' . $brg->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <?php endforeach;?>
+                                            <?php endforeach; ?>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                                 <nav>
                                     <ul class="pagination">

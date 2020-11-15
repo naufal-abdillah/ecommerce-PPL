@@ -5,27 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Product - Brand</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/simple-line-icons.min.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/simple-line-icons.min.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/smoothproducts.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/smoothproducts.css'); ?>">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Catalog</a></li>
                     <!--Shopping cart-->
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart');?>">
-                        <?php $keranjang = 'Shopping Cart: '.$this->cart->total_items(). ' items' ?>
-                        <?php echo $keranjang?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart'); ?>">
+                            <?php $keranjang = 'Shopping Cart: ' . $this->cart->total_items() . ' items' ?>
+                            <?php echo $keranjang ?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -34,33 +33,31 @@
         <section class="clean-block clean-product dark">
             <div class="container">
                 <div class="block-heading">
-                    
+
                 </div>
                 <div class="block-content">
                     <div class="product-info">
-                        <div class="row">
+                        <div class="row"><?php $barang = $this->barang ?>
                             <div class="col-md-6">
                                 <div class="gallery">
-                                    <div class="sp-wrap"><a href="<?php echo base_url('assets/img/tech/image1.jpg');?>"><img class="img-fluid d-block mx-auto" src="<?php echo base_url('assets/img/tech/image1.jpg');?>"></a><a href="<?php echo base_url('assets/img/tech/image1.jpg');?>"><img class="img-fluid d-block mx-auto" src="<?php echo base_url('assets/img/tech/image1.jpg');?>"></a><a href="<?php echo base_url('assets/img/tech/image1.jpg');?>"><img class="img-fluid d-block mx-auto" src="<?php echo base_url('assets/img/tech/image1.jpg');?>"></a></div>
+                                    <div class="sp-wrap"><a><img class="img-fluid d-block mx-auto" src="<?php echo base_url() . '/assets/img/' . $barang->gambar ?>"></a></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info">
-                                    <h3>Lorem Ipsum</h3>
-                                    <div class="rating"><img src="<?php echo base_url('assets/img/star.svg');?>"><img src="<?php echo base_url('assets/img/star.svg');?>"><img src="<?php echo base_url('assets/img/star.svg');?>"><img src="<?php echo base_url('assets/img/star-half-empty.svg');?>"><img src="<?php echo base_url('assets/img/star-empty.svg');?>"></div>
+                                    <h3><?php echo $barang->nama_barang ?></h3>
                                     <div class="price">
-                                        <h3>$300.00</h3>
-                                    </div><button class="btn btn-primary" type="button"><i class="icon-basket"></i>Add to Cart</button>
+                                        <h3><?php echo $barang->harga ?></h3>
+                                    </div><?php echo anchor('cart/add_cart/' . $barang->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                     <div class="summary">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nunc, pretium at augue at, convallis pellentesque ipsum. Vestibulum diam risus, sagittis at fringilla at, pulvinar vel risus. Vestibulum dignissim
-                                            eu nulla eu imperdiet. Morbi mollis tellus a nunc vestibulum consequat. Quisque tristique elit et nibh dapibus sodales. Nam sollicitudin a urna sed iaculis.</p>
+                                        <p><?php echo $barang->keterangan ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
         </section>
@@ -106,11 +103,11 @@
             <p>© 2020 Copyright Text</p>
         </div>
     </footer>
-    <script src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="<?php echo base_url('assets/js/smoothproducts.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/theme.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/smoothproducts.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/theme.js'); ?>"></script>
 </body>
 
 </html>
