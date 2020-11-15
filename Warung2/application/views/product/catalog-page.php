@@ -83,7 +83,7 @@
                                             <?php foreach ($barang as $brg) : ?>
                                                 <div class="col-12 col-md-6 col-lg-4">
                                                     <div class="clean-product-item">
-                                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="<?php echo base_url().'/assets/img/'.$brg->gambar ?>"></a></div>
+                                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" width=100% src="<?php echo base_url().'/assets/img/'.$brg->gambar?>"> </a></div>
                                                         <div class="product-name"><a href="#"><?php echo $brg->nama_barang?></a></div>
                                                         <div class="about">
                                                         <!-- <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div> -->
