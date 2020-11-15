@@ -5,7 +5,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('product/catalog-page');
+		$data['barang'] = $this->model_barang->tampil_data()->result();
+		$this->load->view('product/catalog-page',$data);
 	}
 	public function cart()
 	{
