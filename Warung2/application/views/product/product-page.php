@@ -48,7 +48,7 @@
                                     <h3><?php echo $barang->nama_barang ?></h3>
                                     <div class="price">
                                         <h3><?php echo $barang->harga ?></h3>
-                                    </div><?php echo anchor('cart/add_cart/' . $barang->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
+                                    </div><?php echo anchor('cart/add_cart2/' . $barang->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                     <div class="summary">
                                         <p><?php echo $barang->keterangan ?></p>
                                     </div>

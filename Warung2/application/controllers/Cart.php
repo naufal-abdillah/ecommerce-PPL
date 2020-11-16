@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Cart extends CI_Controller {
+class Cart extends CI_Controller
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -17,7 +18,8 @@ class Cart extends CI_Controller {
 		$this->load->view('pemesanan/payment-page');
 	}
 
-	public function add_cart($id){
+	public function add_cart($id)
+	{
 		$barang = $this->model_barang->find($id);
 
 		$data = array(
@@ -31,9 +33,24 @@ class Cart extends CI_Controller {
 		redirect('Welcome');
 	}
 
-	public function delete_cart(){
+	public function add_cart2($id)
+	{
+		$barang = $this->model_barang->find($id);
+
+		$data = array(
+			'id'		=> $barang->id_barang,
+			'qty'		=> 1,
+			'price'		=> $barang->harga,
+			'name'		=> $barang->nama_barang
+		);
+
+		$this->cart->insert($data);
+		redirect('Cart');
+	}
+
+	public function delete_cart()
+	{
 		$this->cart->destroy();
 		redirect('Welcome');
 	}
-	
 }
