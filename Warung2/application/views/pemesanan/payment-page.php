@@ -25,7 +25,7 @@
                         <?php echo $keranjang?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login');?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -35,7 +35,6 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Payment</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
                 </div>
                 <form>
                     <div class="products">

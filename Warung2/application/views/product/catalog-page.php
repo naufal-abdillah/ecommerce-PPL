@@ -91,7 +91,7 @@
                                                         <div class="about">
                                                             <!-- <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div> -->
                                                             <div class="price">
-                                                                <h3>RP. <?php echo $brg->harga ?></h3>
+                                                                <h3>RP. <?php echo number_format($brg->harga,0,',','.') ?></h3>
                                                             </div>
                                                             <!--Shopping cart-->
                                                             <?php echo anchor('cart/add_cart/' . $brg->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>

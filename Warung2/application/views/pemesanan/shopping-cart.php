@@ -54,13 +54,13 @@
                                         <div class="col-md-5 product-info">
                                         <?php echo $items['name']?>
                                             <div class="product-specs">
-                                                <div><span>Price:&nbsp;</span><span class="value"><?php echo $items['price']?></span></div>
+                                                <div><span>Price:&nbsp;</span><span class="value"><?php echo number_format($items['price'],0,',','.')?></span></div>
                                             </div>
                                         </div>
                                         <div class="col-6 col-md-2 quantity"><label class="d-none d-md-block" for="quantity">Quantity</label><input type="number" name='qty' id="number" class="form-control quantity-input" value="<?php echo $items['qty']?>"></div>
                                         <div class="col-6 col-md-2 "><label class="d-none d-md-block" for="quantity">Subtotal</label>
                                         <span>
-                                        <b> <?php echo $items['subtotal']?> </b>
+                                        <b> <?php echo number_format($items['subtotal'],0,',','.')?> </b>
                                         </span>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                         <div class="col-md-12 col-lg-4">
                             <div class="summary">
                                 <h3>Summary</h3>
-                                <h4><span class="text">Total</span><span class="price"><?= $this->cart->total() ?></span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></div>
+                                <h4><span class="text">Total</span><span class="price"><?= 'Rp. '. number_format($this->cart->total(),0,',','.') ?></span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button></div>
                         </div>
                     </div>
                 </div>
