@@ -41,7 +41,9 @@
                     <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" id="password"></div>
                     <div class="form-group">
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
-                    </div><button class="btn btn-primary btn-block" type="submit">Log In</button></form>
+                    </div><button class="btn btn-primary btn-block" type="submit">Log In</button>
+                    <a href="<?php echo base_url('Login/daftar');?>">Sign Up</a>    
+                </form>
             </div>
         </section>
     </main>

@@ -39,15 +39,17 @@
                 <form>
                     <div class="products">
                         <h3 class="title">Checkout</h3>
-                        <div class="item"><span class="price">$200</span>
-                            <p class="item-name">Product 1</p>
-                            <p class="item-description">Lorem ipsum dolor sit amet</p>
+                        <?php
+                            foreach ($this->cart->contents() as $items) :
+                            $id = $items['id'];
+                            $produk = $this->model_barang->find($id);
+                        ?>
+                        <div class="item"><span class="price"><?php echo number_format($items['subtotal'], 0, ',', '.') ?></span>
+                            <p class="item-name"><?php echo $items['name'] ?> </p>
+                            <p class="item-description"><?php echo $items['qty'] ?> Items</p>
                         </div>
-                        <div class="item"><span class="price">$120</span>
-                            <p class="item-name">Product 2</p>
-                            <p class="item-description">Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="total"><span>Total</span><span class="price">$320</span></div>
+                        <?php endforeach; ?>    
+                        <div class="total"><span>Total</span><span class="price"><?= 'Rp. ' . number_format($this->cart->total(), 0, ',', '.') ?></span></div>
                     </div>
                     <div class="card-details">
                         <h3 class="title">Credit Card Details</h3>

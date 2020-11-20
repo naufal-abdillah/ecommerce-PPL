@@ -76,7 +76,10 @@
                         <div class="col-md-12 col-lg-4">
                             <div class="summary">
                                 <h3>Summary</h3>
-                                <h4><span class="text">Total</span><span class="price"><?= 'Rp. ' . number_format($this->cart->total(), 0, ',', '.') ?></span></h4><button class="btn btn-primary btn-block btn-lg" type="button">Checkout</button>
+                                <h4><span class="text">Total</span><span class="price"><?= 'Rp. ' . number_format($this->cart->total(), 0, ',', '.') ?></span></h4>
+                                <a href="<?= base_url('Cart/pesan') ?>">
+                                    <div class="btn btn-primary btn-block btn-lg">Checkout</div>
+                                </a>
                             </div>
                         </div>
                     </div>
