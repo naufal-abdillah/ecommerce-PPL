@@ -29,7 +29,7 @@
                             <?php echo $keranjang ?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Auth'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -75,15 +75,15 @@
                                             <?php foreach ($barang as $brg) : ?>
                                                 <div class="col-12 col-md-6 col-lg-4">
                                                     <div class="clean-product-item">
-                                                        <div class="image"><a href="<?php echo base_url('Product/details/' . $brg->id_barang); ?>"><img class="img-fluid d-block mx-auto" width=100% src="<?php echo base_url() . '/assets/img/' . $brg->gambar ?>"> </a></div>
-                                                        <div class="product-name"><a href="<?php echo base_url('Product/details/' . $brg->id_barang); ?>"><?php echo $brg->nama_barang ?></a></div>
+                                                        <div class="image"><a href="<?php echo base_url('Product/details/' . $brg->idBarang); ?>"><img class="img-fluid d-block mx-auto" width=100% src="<?php echo base_url() . '/assets/img/' . $brg->gambar ?>"> </a></div>
+                                                        <div class="product-name"><a href="<?php echo base_url('Product/details/' . $brg->idBarang); ?>"><?php echo $brg->namaBarang ?></a></div>
                                                         <div class="about">
                                                             <!-- <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div> -->
                                                             <div class="price">
                                                                 <h3>RP. <?php echo number_format($brg->harga, 0, ',', '.') ?></h3>
                                                             </div>
                                                             <!--Shopping cart-->
-                                                            <?php echo anchor('cart/add_cart/' . $brg->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
+                                                            <?php echo anchor('cart/add_cart/' . $brg->idBarang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                                         </div>
                                                     </div>
                                                 </div>

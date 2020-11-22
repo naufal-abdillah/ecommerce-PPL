@@ -23,10 +23,10 @@ class Cart extends CI_Controller
 		$barang = $this->model_barang->find($id);
 
 		$data = array(
-			'id'		=> $barang->id_barang,
+			'id'		=> $barang->idBarang,
 			'qty'		=> 1,
 			'price'		=> $barang->harga,
-			'name'		=> $barang->nama_barang
+			'name'		=> $barang->namaBarang
 		);
 
 		$this->cart->insert($data);
@@ -38,10 +38,10 @@ class Cart extends CI_Controller
 		$barang = $this->model_barang->find($id);
 
 		$data = array(
-			'id'		=> $barang->id_barang,
+			'id'		=> $barang->idBarang,
 			'qty'		=> 1,
 			'price'		=> $barang->harga,
-			'name'		=> $barang->nama_barang
+			'name'		=> $barang->namaBarang
 		);
 
 		$this->cart->insert($data);

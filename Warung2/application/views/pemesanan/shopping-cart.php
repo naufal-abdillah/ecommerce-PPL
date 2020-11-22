@@ -24,7 +24,7 @@
                             <?php echo $keranjang ?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Auth'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>

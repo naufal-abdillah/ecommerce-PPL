@@ -24,7 +24,7 @@
                             <?php echo $keranjang ?>
                         </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Login'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Auth'); ?>">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -45,12 +45,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="info">
-                                    <h3><?php echo $barang->nama_barang ?></h3>
+                                    <h3><?php echo $barang->namaBarang ?></h3>
                                     <div class="price">
                                         <h3>RP. <?php echo number_format($barang->harga, 0, ',', '.') ?></h3>
-                                    </div><?php echo anchor('cart/add_cart2/' . $barang->id_barang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
+                                    </div><?php echo anchor('cart/add_cart2/' . $barang->idBarang, '<div class="btn btn-sm btn-success">Add to Cart</div>') ?>
                                     <div class="summary">
-                                        <p><?php echo $barang->keterangan ?></p>
+                                        <p><?php echo $barang->deskripsi ?></p>
                                     </div>
                                 </div>
                             </div>
