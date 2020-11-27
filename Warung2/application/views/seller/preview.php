@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Register - Brand</title>
+    <title>Product - Brand</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="<?php echo base_url('assets/fonts/simple-line-icons.min.css'); ?>">
@@ -17,13 +17,9 @@
         <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Catalog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart'); ?>">Shopping Cart</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="<?php if (isset($_SESSION['logged_in'])) {
-                                                                                echo base_url('Auth/logout');
-                                                                            } else {
-                                                                                echo base_url('Auth');
-                                                                            } ?>">
+                    <li class="nav-item"><a class="nav-link" href="">Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Shopping Cart</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="">
                             <?php if (isset($_SESSION['logged_in'])) {
                                 echo ("Log out");
                             } else {
@@ -33,31 +29,37 @@
             </div>
         </div>
     </nav>
-    <main class="page registration-page">
-        <section class="clean-block clean-form dark">
+    <main class="page product-page">
+        <section class="clean-block clean-product dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Registration</h2>
+
                 </div>
-                <form method="post" action="<?= base_url('index.php/Auth/registration'); ?>">
-                    <div class="form-group"><label for="name">Name</label><input name="name" class="form-control item" type="text" id="name"> <small><?= form_error('name'); ?></small></div>
-                    <div class="form-group"><label for="email">Email</label><input name="email" class="form-control item" type="email" id="email"><small><?= form_error('email'); ?></small></div>
-                    <div class="form-group"><label for="password">Password</label><input name="password" class="form-control item" type="password" id="password"><small><?= form_error('password'); ?></small></div>
-                    <div class="form-group"><label for="gender">Gender</label>
-                        <select id="gender" name="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
+                <div class="block-content">
+                    <div class="product-info">
+                        <div class="row"><?php $barang = $this->barang ?>
+                            <div class="col-md-6">
+                                <div class="gallery">
+                                    <div class="sp-wrap"><a><img class="img-fluid d-block mx-auto" src="<?php echo base_url() . '/assets/img/' . $barang->gambar ?>"></a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info">
+                                    <h3><?php echo $barang->namaBarang ?></h3>
+                                    <div class="price">
+                                        <h3>RP. <?php echo number_format($barang->harga, 0, ',', '.') ?></h3>
+                                    </div>
+                                    <div class="btn btn-sm btn-success">Add to Cart</div>
+                                    <div class="summary">
+                                        <p><?php echo $barang->deskripsi ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group"><label for="telp">Phone Number</label><input name="phone" class="form-control item" type="number" id="telp"><small><?= form_error('phone'); ?></small></div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
-                    </div><button class="btn btn-primary btn-block" type="submit">Sign Up</button>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/user') ?>">Already have an account?</a></div>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/seller') ?>">A Seller?</a></div>
-                    <?php// base_url bisa ga harus pake index.php, tapi harus ngubah .htaccess ?>
-                </form>
+
+
+                </div>
             </div>
         </section>
     </main>

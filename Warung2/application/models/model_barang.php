@@ -17,4 +17,13 @@ class Model_barang extends CI_Model
             return array();
         }
     }
+    public function barangSeller($id)
+    {
+        return $this->db->where('idSeller', $id)
+            ->get('barang');
+    }
+    public function delete($id)
+    {
+        $this->db->delete('barang', array('idBarang' => $id));
+    }
 }

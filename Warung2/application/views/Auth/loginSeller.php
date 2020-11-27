@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Register - Brand</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
+    <title>Login - Brand</title>
+    <link rel="stylesheet" href="<?= base_url('assets/'); ?>bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/simple-line-icons.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/fonts/simple-line-icons.min.css'); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/smoothproducts.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/smoothproducts.css'); ?>">
+
 </head>
 
 <body>
@@ -33,30 +34,23 @@
             </div>
         </div>
     </nav>
-    <main class="page registration-page">
+    <main class="page login-page">
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Registration</h2>
+                    <h2 class="text-info">Log In Sebagai Seller</h2>
                 </div>
-                <form method="post" action="<?= base_url('index.php/Auth/registration'); ?>">
-                    <div class="form-group"><label for="name">Name</label><input name="name" class="form-control item" type="text" id="name"> <small><?= form_error('name'); ?></small></div>
+                <?= $this->session->flashdata('success'); ?>
+                <form method="post" action=<?= base_url('Auth/loginSeller'); ?>>
                     <div class="form-group"><label for="email">Email</label><input name="email" class="form-control item" type="email" id="email"><small><?= form_error('email'); ?></small></div>
-                    <div class="form-group"><label for="password">Password</label><input name="password" class="form-control item" type="password" id="password"><small><?= form_error('password'); ?></small></div>
-                    <div class="form-group"><label for="gender">Gender</label>
-                        <select id="gender" name="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><label for="telp">Phone Number</label><input name="phone" class="form-control item" type="number" id="telp"><small><?= form_error('phone'); ?></small></div>
+                    <div class="form-group"><label for="password">Password</label><input name="password" class="form-control" type="password" id="password"><small><?= form_error('password'); ?></small></div>
                     <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
-                    </div><button class="btn btn-primary btn-block" type="submit">Sign Up</button>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/user') ?>">Already have an account?</a></div>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/seller') ?>">A Seller?</a></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
+                    </div><button class="btn btn-primary btn-block" type="submit">Log In</button>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/regSeller') ?>">Don't have an account?</a></div>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/user') ?>">A Customer?</a></div>
                     <?php// base_url bisa ga harus pake index.php, tapi harus ngubah .htaccess ?>
+
                 </form>
             </div>
         </section>

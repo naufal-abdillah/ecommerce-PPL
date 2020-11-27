@@ -37,26 +37,19 @@
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Registration</h2>
+                    <h2 class="text-info">Registrasi sebagai Seller</h2>
                 </div>
-                <form method="post" action="<?= base_url('index.php/Auth/registration'); ?>">
+                <form method="post" action="<?= base_url('index.php/Auth/registrationSeller'); ?>">
                     <div class="form-group"><label for="name">Name</label><input name="name" class="form-control item" type="text" id="name"> <small><?= form_error('name'); ?></small></div>
                     <div class="form-group"><label for="email">Email</label><input name="email" class="form-control item" type="email" id="email"><small><?= form_error('email'); ?></small></div>
                     <div class="form-group"><label for="password">Password</label><input name="password" class="form-control item" type="password" id="password"><small><?= form_error('password'); ?></small></div>
-                    <div class="form-group"><label for="gender">Gender</label>
-                        <select id="gender" name="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
                     <div class="form-group"><label for="telp">Phone Number</label><input name="phone" class="form-control item" type="number" id="telp"><small><?= form_error('phone'); ?></small></div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
                         <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
                     </div><button class="btn btn-primary btn-block" type="submit">Sign Up</button>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/user') ?>">Already have an account?</a></div>
-                    <div class="form-group"><a href="<?php echo base_url('Auth/seller') ?>">A Seller?</a></div>
-                    <?php// base_url bisa ga harus pake index.php, tapi harus ngubah .htaccess ?>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/seller'); ?>">Already have an account?</a></div>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/user') ?>">A Customer?</a></div>
                 </form>
             </div>
         </section>

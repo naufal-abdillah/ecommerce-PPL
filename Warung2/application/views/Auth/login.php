@@ -47,7 +47,8 @@
                     <div class="form-group">
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
                     </div><button class="btn btn-primary btn-block" type="submit">Log In</button>
-                    <div class="form-group"><a href="<?php base_url('applications/') ?>index.php/auth/registration">Don't have an account?</a></div>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/regUser') ?>">Don't have an account?</a></div>
+                    <div class="form-group"><a href="<?php echo base_url('Auth/seller') ?>">A Seller?</a></div>
                     <?php// base_url bisa ga harus pake index.php, tapi harus ngubah .htaccess ?>
 
                 </form>
