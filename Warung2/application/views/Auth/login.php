@@ -20,7 +20,16 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Catalog</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Cart'); ?>">Shopping Cart</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="<?php echo base_url('Auth'); ?>">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="<?php if (isset($_SESSION['logged_in'])) {
+                                                                                echo base_url('Auth/logout');
+                                                                            } else {
+                                                                                echo base_url('Auth');
+                                                                            } ?>">
+                            <?php if (isset($_SESSION['logged_in'])) {
+                                echo ("Log out");
+                            } else {
+                                echo ("Log in");
+                            } ?></a></li>
                 </ul>
             </div>
         </div>
